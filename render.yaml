@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: stripe-django-shop
+    env: docker
+    plan: free
+    region: frankfurt
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        sync: false
+      - key: STRIPE_PUB_KEY_USD
+        sync: false
+      - key: STRIPE_SEC_KEY_USD
+        sync: false
+      - key: STRIPE_PUB_KEY_EUR
+        sync: false
+      - key: STRIPE_SEC_KEY_EUR
+        sync: false
